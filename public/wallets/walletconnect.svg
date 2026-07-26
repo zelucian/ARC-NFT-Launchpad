@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <rect width="32" height="32" rx="8" fill="#3B99FC"/>
+  <path d="M10.1 12.2C13.4 9 18.6 9 21.9 12.2L22.6 12.9L20.4 15.1L19.9 14.6C17.7 12.4 14.3 12.4 12.1 14.6L11.5 15.1L9.4 12.9L10.1 12.2ZM24.4 14.6L26.5 16.7L21.9 21.3L18.8 18.2L19.4 17.6C20.8 16.2 23 16.2 24.4 17.6L24.4 14.6ZM7.6 14.6L12.2 19.2L13.2 18.2L12.6 17.6C11.2 16.2 9 16.2 7.6 17.6L5.5 15.5L7.6 14.6Z" fill="#FFFFFF"/>
+</svg>

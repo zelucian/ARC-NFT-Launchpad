@@ -1,0 +1,60 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              String        @id @default(cuid())
+  address         String        @unique // Lowercase wallet address
+  name            String?
+  handle          String?
+  avatar          String?
+  usdcBalance     Float         @default(1425.0)
+  gasBalance      Float         @default(142.5)
+  isVerified      Boolean       @default(false)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  collections     Collection[]  @relation("UserCollections")
+  mints           MintHistory[] @relation("UserMints")
+}
+
+model Collection {
+  id              String        @id @default(cuid())
+  name            String
+  symbol          String
+  description     String
+  category        String        @default("Art") // Art, Gaming, PFP, Music, RWA, Utility
+  bannerImage     String
+  featuredImage   String
+  creatorAddress  String
+  creator         User          @relation("UserCollections", fields: [creatorAddress], references: [address], onDelete: Cascade)
+  mintPrice       Float         @default(0) // In USDC
+  maxSupply       Int           @default(1000)
+  mintedSupply    Int           @default(0)
+  status          String        @default("Live Minting") // Live Minting, Upcoming, Sold Out, Ended
+  isVerified      Boolean       @default(false)
+  royaltyFee      Float         @default(5.0)
+  mintStartDate   DateTime      @default(now())
+  contractAddress String        @unique
+  totalVolume     Float         @default(0) // Cumulative volume in USDC
+  featuredOrder   Int?          @default(0)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  mints           MintHistory[]
+}
+
+model MintHistory {
+  id              String     @id @default(cuid())
+  collectionId    String
+  collection      Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  minterAddress   String
+  minter          User       @relation("UserMints", fields: [minterAddress], references: [address], onDelete: Cascade)
+  quantity        Int        @default(1)
+  totalPrice      Float      @default(0) // In USDC
+  txHash          String     @unique
+  mintedAt        DateTime   @default(now())
+}

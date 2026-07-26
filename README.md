@@ -41,11 +41,11 @@ A modern, high-performance, non-custodial Web3 NFT Launchpad built specifically 
 
 | Home & Hero Section | Connect Wallet Modal |
 | :---: | :---: |
-| ![Home Screenshot](https://via.placeholder.com/600x340/0f172a/ffffff?text=ARC+NFT+Launchpad+Home+Hero) | ![Connect Wallet Screenshot](https://via.placeholder.com/600x340/0f172a/ffffff?text=Connect+Wallet+Modal) |
+| ![Home Screenshot](docs/home.png) | ![Connect Wallet Screenshot](docs/connect-wallet.png) |
 
 | Explore Collections | Mint NFT Modal |
 | :---: | :---: |
-| ![Explore Screenshot](https://via.placeholder.com/600x340/0f172a/ffffff?text=Explore+Collections) | ![Mint Modal Screenshot](https://via.placeholder.com/600x340/0f172a/ffffff?text=Mint+NFT+Modal) |
+| ![Explore Screenshot](docs/explore.png) | ![Mint Modal Screenshot](docs/mint.png) |
 
 ---
 
